@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:AnimationBehaviorDemo.Converters;assembly=AnimationBehaviorDemo"
+             xmlns:behaviors="clr-namespace:AnimationBehaviorDemo.Behaviors;assembly=AnimationBehaviorDemo"
+             x:Class="AnimationBehaviorDemo.StartPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <Grid>
+    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+      <Button Text="Open Popup" HorizontalOptions="Center" VerticalOptions="Start"
+          IsEnabled="{Binding IsPopupVisible, Converter={StaticResource InverseBooleanConverter}}"
+          Command="{Binding TogglePopup}"></Button>
+      <Label Text="Here be some text" FontSize="25"></Label>
+      <Label Text="Some more text" FontSize="20"></Label>
+    </StackLayout>
+
+    <ContentView BackgroundColor="Green" 
+                 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+      <ContentView.Behaviors >
+        <behaviors:FoldingPaneBehavior 
+          ViewHasAppeared ="{Binding ViewHasAppeared}" IsPopupVisible="{Binding IsPopupVisible}"/>
+      </ContentView.Behaviors>
+      <StackLayout>
+        <Label Text="Here is my popup" FontSize="20"></Label>
+        <Button Text="Close popup" HorizontalOptions="Center"
+       IsEnabled="{Binding IsPopupVisible}"
+       Command="{Binding TogglePopup}"></Button>
+
+      </StackLayout>
+    </ContentView>
+  </Grid>
+</ContentPage>

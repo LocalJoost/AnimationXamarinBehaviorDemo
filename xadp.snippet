@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Xamarin Attached Dependency Property</Title>
+      <Description>Xamarin Attached Dependency Property.</Description>
+      <Author>Joost van Schaik</Author>
+      <Shortcut>xadp</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>PropertyType</ID>
+          <ToolTip>Type of the property</ToolTip>
+          <Default>string</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>PropertyName</ID>
+          <ToolTip>Name of the property.</ToolTip>
+          <Default>MyName</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ContainingType</ID>
+          <ToolTip>Name of the containing type</ToolTip>
+          <Default>MyContainingType</Default> 
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[#region $PropertyName$ Attached Dependency Property      
+public static readonly BindableProperty $PropertyName$Property = 
+   BindableProperty.Create<$ContainingType$,$PropertyType$>(t => t.$PropertyName$, 
+   default($PropertyType$), BindingMode.TwoWay, 
+   propertyChanged: On$PropertyName$Changed);
+   
+public $PropertyType$ $PropertyName$
+{
+    get
+    {
+        return ($PropertyType$)GetValue($PropertyName$Property);
+    }
+    set
+    {
+       SetValue($PropertyName$Property, value);
+    }
+}
+
+private static void On$PropertyName$Changed(BindableObject bindable, $PropertyType$ oldValue, $PropertyType$ newValue)
+{
+    var thisObj = bindable as $ContainingType$;
+    if (thisObj != null)
+    {
+        // do something
+    }
+}
+#endregion]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
