@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimationBehaviorDemo", "AnimationBehaviorDemo\AnimationBehaviorDemo\AnimationBehaviorDemo.csproj", "{5C794E47-BE11-4BA7-8379-F11A2CC1B7AF}"
 EndProject
@@ -68,6 +68,7 @@ Global
 		{5C794E47-BE11-4BA7-8379-F11A2CC1B7AF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{5C794E47-BE11-4BA7-8379-F11A2CC1B7AF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{5C794E47-BE11-4BA7-8379-F11A2CC1B7AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5C794E47-BE11-4BA7-8379-F11A2CC1B7AF}.Debug|x86.Build.0 = Debug|Any CPU
 		{5C794E47-BE11-4BA7-8379-F11A2CC1B7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C794E47-BE11-4BA7-8379-F11A2CC1B7AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C794E47-BE11-4BA7-8379-F11A2CC1B7AF}.Release|ARM.ActiveCfg = Release|Any CPU
@@ -138,10 +139,13 @@ Global
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|x86.Build.0 = Debug|Any CPU
+		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Debug|x86.Deploy.0 = Debug|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Release|Any CPU.Build.0 = Release|Any CPU
 		{880F44E7-F5D4-4E89-ABA2-4AFC2906F360}.Release|Any CPU.Deploy.0 = Release|Any CPU

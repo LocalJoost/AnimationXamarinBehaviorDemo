@@ -16,10 +16,10 @@ namespace AnimationBehaviorDemo
       BindingContext = new AnimationViewModel();
     }
 
-    protected override void OnAppearing()
+    protected override void OnSizeAllocated(double width, double height)
     {
       Context.OnViewAppearing();
-      base.OnAppearing();
+      base.OnSizeAllocated(width, height);
     }
 
     protected override void OnDisappearing()

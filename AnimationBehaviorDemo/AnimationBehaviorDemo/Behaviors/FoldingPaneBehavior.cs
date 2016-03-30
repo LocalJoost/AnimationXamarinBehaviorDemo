@@ -59,9 +59,10 @@ namespace AnimationBehaviorDemo.Behaviors
 
     #region IsPopupVisible Attached Dependency Property
     public static readonly BindableProperty IsPopupVisibleProperty =
-       BindableProperty.Create<FoldingPaneBehavior, bool>(t => t.IsPopupVisible,
-       default(bool), BindingMode.OneWay,
-       propertyChanged: OnIsPopupVisibleChanged);
+           BindableProperty.Create(nameof(IsPopupVisible), typeof(bool),
+           typeof(FoldingPaneBehavior),
+           default(bool), BindingMode.OneWay,
+           propertyChanged: OnIsPopupVisibleChanged);
 
     public bool IsPopupVisible
     {
@@ -75,19 +76,33 @@ namespace AnimationBehaviorDemo.Behaviors
       }
     }
 
-    private static void OnIsPopupVisibleChanged(BindableObject bindable, bool oldValue, bool newValue)
+
+    private static void OnIsPopupVisibleChanged(BindableObject bindable, object oldValue, object newValue)
     {
       var thisObj = bindable as FoldingPaneBehavior;
-      if (thisObj != null)
-      {
-        thisObj.AnimatePopup(newValue);
-      }
+      thisObj?.AnimatePopup((bool)newValue);
     }
     #endregion
 
+    protected VisualElement GetParentView()
+    {
+      var parent = associatedObject as Element;
+      VisualElement parentView = null;
+      if (parent != null)
+      {
+        do
+        {
+          parent = parent.Parent;
+          parentView = parent as VisualElement;
+        } while (parentView?.Width <= 0 && parent.Parent != null);
+      }
+
+      return parentView;
+    }
+
     private void Init()
     {
-      var p = associatedObject.ParentView;
+      var p = GetParentView();
       unfoldingHeight = Math.Round(p.Height * HeightFraction, 2);
       associatedObject.WidthRequest = Math.Round(p.Width * WidthFraction , 2);
       associatedObject.HeightRequest = 0;
